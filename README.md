@@ -1,6 +1,6 @@
 # 🕯️ Lume Engine
 
-**Lume** is a lightweight, modular 2D game engine built with **C++20**, **SDL2**, and **OpenGL**. It is designed as a reusable static library, allowing developers to focus on game logic while the engine handles the underlying hardware abstraction and rendering pipeline.
+**Lume** is a lightweight, component system and modular 2D game engine built with **C++20**, **SDL2**, and **OpenGL**. It is designed as a reusable static library, allowing developers to focus on game logic while the engine handles the underlying hardware abstraction and rendering pipeline.
 
 ---
 
