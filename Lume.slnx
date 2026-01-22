@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Lume.vcxproj" Id="c42720ed-af02-474a-871f-a19dac1da8d3" />
+</Solution>

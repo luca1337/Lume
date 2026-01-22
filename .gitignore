@@ -416,3 +416,16 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# Lume Specific: Ignore only our build outputs
+/bin/
+/build/
+
+# Assets & Temp
+*.tga
+*.log
+*.tmp
+
+# Don't ignore vendor libraries even if they are in a 'bin' or 'lib' folder
+!/vendor/**/bin/
+!/vendor/**/lib/
