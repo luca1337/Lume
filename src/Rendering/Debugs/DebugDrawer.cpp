@@ -6,7 +6,7 @@
 #include <Lume/Utils.h>
 #include <Lume/rendering/Camera.h>
 #include <Lume/rendering/Shader.h>
-#include <Lume/Rendering/Debug/DebugDrawer.h>
+#include <Lume/Rendering/Debugs/DebugDrawer.h>
 
 namespace debug_drawer
 {
