@@ -8,7 +8,7 @@
 #include <Lume/Collisions/CollisionSystem.h>
 #include <Lume/Collisions/HitInfo.h>
 #include <Lume/components/Collider.h>
-#include <Lume/Rendering/Debug/DebugDrawer.h>
+#include <Lume/Rendering/Debugs/DebugDrawer.h>
 
 namespace
 {

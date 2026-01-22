@@ -2,7 +2,7 @@
 
 #include <Lume/Logger.h>
 #include <Lume/Window.h>
-#include <Lume/Rendering/Debug/DebugDrawer.h>
+#include <Lume/Rendering/Debugs/DebugDrawer.h>
 #include <Lume/rendering/PostProcess/PostProcessing.h>
 
 Window::Window(const unsigned width, const unsigned height, const unsigned depth, const unsigned majorVersion, const unsigned minorVersion) : mProps{ .mWidth = width, .mHeight = height }

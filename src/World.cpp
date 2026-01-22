@@ -7,7 +7,7 @@
 #include <Lume/rendering/Shader.h>
 
 #include "Lume/rendering/RenderContext.h"
-#include "Lume/Rendering/Debug/DebugDrawer.h"
+#include "Lume/Rendering/Debugs/DebugDrawer.h"
 
 auto World::setup() -> void
 {
