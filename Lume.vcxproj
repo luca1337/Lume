@@ -43,7 +43,7 @@
     <ClInclude Include="include\Lume\Random.h" />
     <ClInclude Include="include\Lume\Collisions\Ray.h" />
     <ClInclude Include="include\Lume\Rendering\Camera.h" />
-    <ClInclude Include="include\Lume\Rendering\Debug\DebugDrawer.h" />
+    <ClInclude Include="include\Lume\Rendering\Debugs\DebugDrawer.h" />
     <ClInclude Include="include\Lume\Rendering\ParticleSystem.h" />
     <ClInclude Include="include\Lume\Rendering\PostProcess\PostProcessing.h" />
     <ClInclude Include="include\Lume\Rendering\RenderContext.h" />
@@ -72,7 +72,7 @@
     <ClCompile Include="src\Logger.cpp" />
     <ClCompile Include="src\Random.cpp" />
     <ClCompile Include="src\Rendering\Camera.cpp" />
-    <ClCompile Include="src\Rendering\Debug\DebugDrawer.cpp" />
+    <ClCompile Include="src\Rendering\Debugs\DebugDrawer.cpp" />
     <ClCompile Include="src\Rendering\ParticleSystem.cpp" />
     <ClCompile Include="src\Rendering\PostProcess\PostProcessing.cpp" />
     <ClCompile Include="src\Rendering\Shader.cpp" />
