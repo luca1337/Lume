@@ -1,10 +1,10 @@
 #include <filesystem>
 #include <format>
 #include <fstream>
-#include <Lume/Logger.h>
 #include <source_location>
 #include <span>
 #include <sstream>
+#include <Lume/Logger.h>
 #include <Lume/rendering/Shader.h>
 
 auto read_shader(const std::string& path)

@@ -1,6 +1,5 @@
-#include <Lume/rendering/PostProcessing.h>
-
 #include <Lume/Utils.h>
+#include <Lume/rendering/PostProcess/PostProcessing.h>
 
 PostProcessing::PostProcessing(const Window& window) : mWindow(window)
 {

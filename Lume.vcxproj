@@ -20,8 +20,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Lume\Actor.h" />
-    <ClInclude Include="include\Lume\CollisionListener.h" />
-    <ClInclude Include="include\Lume\CollisionSystem.h" />
+    <ClInclude Include="include\Lume\Collisions\CollisionListener.h" />
+    <ClInclude Include="include\Lume\Collisions\CollisionSystem.h" />
     <ClInclude Include="include\Lume\Color.h" />
     <ClInclude Include="include\Lume\Components\AnimationRenderer.h" />
     <ClInclude Include="include\Lume\Components\BoxCollider.h" />
@@ -34,17 +34,18 @@
     <ClInclude Include="include\Lume\Enums.h" />
     <ClInclude Include="include\Lume\Export.h" />
     <ClInclude Include="include\Lume\glad\glad.h" />
-    <ClInclude Include="include\Lume\HitInfo.h" />
+    <ClInclude Include="include\Lume\Collisions\HitInfo.h" />
     <ClInclude Include="include\Lume\Input.h" />
     <ClInclude Include="include\Lume\IRenderable.h" />
     <ClInclude Include="include\Lume\IResource.h" />
     <ClInclude Include="include\Lume\KHR\khrplatform.h" />
     <ClInclude Include="include\Lume\Logger.h" />
     <ClInclude Include="include\Lume\Random.h" />
-    <ClInclude Include="include\Lume\Ray.h" />
+    <ClInclude Include="include\Lume\Collisions\Ray.h" />
     <ClInclude Include="include\Lume\Rendering\Camera.h" />
+    <ClInclude Include="include\Lume\Rendering\Debug\DebugDrawer.h" />
     <ClInclude Include="include\Lume\Rendering\ParticleSystem.h" />
-    <ClInclude Include="include\Lume\Rendering\PostProcessing.h" />
+    <ClInclude Include="include\Lume\Rendering\PostProcess\PostProcessing.h" />
     <ClInclude Include="include\Lume\Rendering\RenderContext.h" />
     <ClInclude Include="include\Lume\Rendering\Shader.h" />
     <ClInclude Include="include\Lume\Resource.h" />
@@ -58,7 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Actor.cpp" />
-    <ClCompile Include="src\CollisionSystem.cpp" />
+    <ClCompile Include="src\Collisions\CollisionSystem.cpp" />
     <ClCompile Include="src\Components\AnimationRenderer.cpp" />
     <ClCompile Include="src\Components\BoxCollider.cpp" />
     <ClCompile Include="src\Components\Component.cpp" />
@@ -71,8 +72,9 @@
     <ClCompile Include="src\Logger.cpp" />
     <ClCompile Include="src\Random.cpp" />
     <ClCompile Include="src\Rendering\Camera.cpp" />
+    <ClCompile Include="src\Rendering\Debug\DebugDrawer.cpp" />
     <ClCompile Include="src\Rendering\ParticleSystem.cpp" />
-    <ClCompile Include="src\Rendering\PostProcessing.cpp" />
+    <ClCompile Include="src\Rendering\PostProcess\PostProcessing.cpp" />
     <ClCompile Include="src\Rendering\Shader.cpp" />
     <ClCompile Include="src\ResourceManager.cpp" />
     <ClCompile Include="src\Sprite.cpp" />
@@ -82,6 +84,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Lume.slnx" />
+    <None Include="resources\shaders\fragment_line.glsl" />
+    <None Include="resources\shaders\fragment_particle.glsl" />
+    <None Include="resources\shaders\fragment_sprite.glsl" />
+    <None Include="resources\shaders\vertex_particle.glsl" />
+    <None Include="resources\shaders\vertex_sprite.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="resources\shaders\vertex_line.glsl" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>

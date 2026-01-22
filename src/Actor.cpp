@@ -1,6 +1,6 @@
+#include <ranges>
 #include <Lume/Actor.h>
 #include <Lume/IRenderable.h>
-#include <ranges>
 #include <Lume/components/Transform.h>
 
 Actor::Actor(World& w) : m_world{ w } {}

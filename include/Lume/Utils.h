@@ -31,17 +31,6 @@ namespace utils::gl
         return texture_id;
     }
 
-    inline auto GenerateVertexBuffer(GLuint &vao, GLuint &vbo, const std::vector<float> &vertices) -> void
-    {
-        glGenVertexArrays(1, &vao);
-        glBindVertexArray(vao);
-
-        glGenBuffers(1, &vbo);
-        glBindBuffer(GL_ARRAY_BUFFER, vbo);
-
-        glBufferData(GL_ARRAY_BUFFER, static_cast<GLsizei>(vertices.size() * sizeof(vertices[0])), vertices.data(), GL_STATIC_DRAW);
-    }
-
     inline auto UploadVertexAttribute(const GLuint slot, const GLint slotSize, const GLsizei stride, const GLuint attributeArrayIndex, const void *ptr) -> void
     {
         glVertexAttribPointer(slot, slotSize, GL_FLOAT, GL_FALSE, stride, ptr);
@@ -71,4 +60,24 @@ namespace utils::gl
 
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
     }
+
+    template<typename T>
+    auto GenerateVertexBuffer(GLuint& vao, GLuint& vbo, const std::vector<T>& vertices, const GLenum usage = GL_STATIC_DRAW) -> void
+    {
+        glGenVertexArrays(1, &vao);
+        glBindVertexArray(vao);
+
+        glGenBuffers(1, &vbo);
+        glBindBuffer(GL_ARRAY_BUFFER, vbo);
+
+        glBufferData(GL_ARRAY_BUFFER, static_cast<GLsizeiptr>(vertices.size() * sizeof(T)), vertices.data(), usage);
+    }
+
+    template<typename T>
+    auto UpdateBufferData(const GLuint vbo, const std::vector<T>& data, const GLenum usage = GL_DYNAMIC_DRAW) -> void
+    {
+        glBindBuffer(GL_ARRAY_BUFFER, vbo);
+        glBufferData(GL_ARRAY_BUFFER, static_cast<GLsizeiptr>(data.size() * sizeof(T)), data.data(), usage);
+    }
+
 } // namespace utils::gl

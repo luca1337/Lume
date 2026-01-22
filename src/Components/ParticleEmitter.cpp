@@ -1,5 +1,5 @@
-#include <Lume/Actor.h>
 #include <exception>
+#include <Lume/Actor.h>
 #include <Lume/ResourceManager.h>
 #include <Lume/World.h>
 #include <Lume/components/ParticleEmitter.h>

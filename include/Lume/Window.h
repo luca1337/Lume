@@ -18,7 +18,7 @@ struct WindowProps
 class RENDER_API Window
 {
 public:
-	Window(unsigned width, unsigned height, unsigned depth, unsigned majorVersion, unsigned minorVersion);
+	Window(unsigned width, unsigned height, unsigned depth = 32, unsigned majorVersion = 4, unsigned minorVersion = 6);
 	Window(const Window &) = delete;
 	Window(Window &&) = delete;
 
@@ -42,7 +42,7 @@ private:
 	SDL_Window *mSdlWindowHandle = {};
 	SDL_GLContext mSdlGlContext = {};
 
-	std::shared_ptr<PostProcessing> mPostProcessing = nullptr;
+	std::shared_ptr<PostProcessing> mPostProcessing = {};
 
 	bool mIsOpen = {};
 	bool mIsPostProcessingEnabled = {};

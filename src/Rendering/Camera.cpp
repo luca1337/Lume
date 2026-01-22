@@ -1,8 +1,8 @@
 #include <Lume/rendering/Camera.h>
 
 #include <glm/gtc/matrix_transform.hpp>
-#include <glm/gtx/matrix_decompose.hpp>
 #include <glm/gtc/quaternion.hpp>
+#include <glm/gtx/matrix_decompose.hpp>
 
 Camera::Camera(const float left, const float right, const float bottom, const float top)
 	: mProjectionMatrix{ glm::ortho(left, right, bottom, top, -1.0f, 1.0f) }, mViewMatrix{ glm::mat4(1.0f) }

@@ -49,10 +49,10 @@ Texture::Texture(const unsigned width, const unsigned height, const Color color)
 {
     for (unsigned i = 0; i < width * height; ++i)
     {
-        mPixelData[static_cast<std::vector<unsigned char, std::allocator<unsigned char>>::size_type>(i) * 4 + 0] = color.r;
-        mPixelData[static_cast<std::vector<unsigned char, std::allocator<unsigned char>>::size_type>(i) * 4 + 1] = color.g;
-        mPixelData[static_cast<std::vector<unsigned char, std::allocator<unsigned char>>::size_type>(i) * 4 + 2] = color.b;
-        mPixelData[static_cast<std::vector<unsigned char, std::allocator<unsigned char>>::size_type>(i) * 4 + 3] = color.a;
+        mPixelData[static_cast<std::vector<unsigned char>::size_type>(i) * 4 + 0] = color.r;
+        mPixelData[static_cast<std::vector<unsigned char>::size_type>(i) * 4 + 1] = color.g;
+        mPixelData[static_cast<std::vector<unsigned char>::size_type>(i) * 4 + 2] = color.b;
+        mPixelData[static_cast<std::vector<unsigned char>::size_type>(i) * 4 + 3] = color.a;
     }
 
     mTextureId = utils::gl::GenerateOpenglTexture(static_cast<GLsizei>(width), static_cast<GLsizei>(height), mPixelData.data(), GL_RGBA, GL_RGBA, GL_REPEAT, GL_REPEAT, true);
@@ -67,7 +67,7 @@ auto Texture::get_pixel(const int x, const int y) const -> const Color&
 
 	const int flipped_y = mHeight - y - 1;
 	const size_t index = (flipped_y * mWidth + x) * 4;
-	return { mPixelData[index + 0], mPixelData[index + 1], mPixelData[index + 2], mPixelData[index + 3] };
+	return {.r = mPixelData[index + 0], .g = mPixelData[index + 1], .b = mPixelData[index + 2], .a = mPixelData[index + 3] };
 }
 
 auto Texture::set_pixel(const int x, const int y, const Color& c) -> void

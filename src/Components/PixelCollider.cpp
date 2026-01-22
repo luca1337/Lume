@@ -1,13 +1,13 @@
-#include <Lume/Actor.h>
 #include <algorithm>
+#include <utility>
+#include <glm/glm.hpp>
+#include <Lume/Actor.h>
 #include <Lume/ResourceManager.h>
 #include <Lume/Sprite.h>
 #include <Lume/Texture.h>
-#include <utility>
 #include <Lume/World.h>
 #include <Lume/components/PixelCollider.h>
 #include <Lume/components/Transform.h>
-#include <glm/glm.hpp>
 #include <Lume/rendering/Camera.h>
 #include <Lume/rendering/RenderContext.h>
 #include <Lume/rendering/Shader.h>

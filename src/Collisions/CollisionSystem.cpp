@@ -1,12 +1,14 @@
-#include <Lume/Actor.h>
 #include <algorithm>
-#include <Lume/components/Collider.h>
-#include <Lume/CollisionListener.h>
-#include <Lume/CollisionSystem.h>
-#include <Lume/HitInfo.h>
 #include <unordered_set>
 #include <utility>
+
+#include <Lume/Actor.h>
 #include <Lume/World.h>
+#include <Lume/Collisions/CollisionListener.h>
+#include <Lume/Collisions/CollisionSystem.h>
+#include <Lume/Collisions/HitInfo.h>
+#include <Lume/components/Collider.h>
+#include <Lume/Rendering/Debug/DebugDrawer.h>
 
 namespace
 {
@@ -40,7 +42,6 @@ namespace
 
 auto collision_system::update_collisions(const World& w) -> void
 {
-	constexpr int cell_size = 32;
 	const auto& actors = w.get_actors();
 
 	// step 1: costruisco la griglia
@@ -48,6 +49,7 @@ auto collision_system::update_collisions(const World& w) -> void
 
 	for (const auto& actor : actors)
 	{
+		constexpr int cell_size = 32;
 		if (!actor->enabled()) continue;
 		const auto& col = actor->get_component<Collider>();
 		if (!col) continue;
@@ -64,6 +66,8 @@ auto collision_system::update_collisions(const World& w) -> void
 			for (int y = min_y; y <= max_y; ++y)
 			{
 				spatial_grid[{x, y}].push_back(actor);
+
+				debug_drawer::add_rect({ x * cell_size, y * cell_size, cell_size, cell_size }, { 0, 0.6f, 1.0f, 0.4f });
 			}
 		}
 	}
@@ -71,7 +75,7 @@ auto collision_system::update_collisions(const World& w) -> void
 	// step 2: Collisioni solo all’interno delle celle evito di ciclare tutti gli Actor partendo dal primo
 	auto current_collisions = actor_collision_set{};
 
-	for (const auto& [cell, cell_actors] : spatial_grid)
+	for (const auto& cell_actors : spatial_grid | std::views::values)
 	{
 		for (auto i = 0ul; i != cell_actors.size(); ++i)
 		{
